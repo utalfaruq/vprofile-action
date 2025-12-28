@@ -42,7 +42,7 @@ jobs:
             -Dsonar.junit.reportsPaths=target/surefire-reports/ \
             -Dsonar.jacoco.reportPaths=target/jacoco-ut.exec \
             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml \
-            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account \
+            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account 
 
       ##- name: SonarQube Quality Gate Check
       ##  id: sonarqube-quality-gate-check
@@ -106,3 +106,6 @@ jobs:
           namespace: default
           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
           name: vprofile-stack
+
+
+### some comments just to see if ecr will be created and eks on standby
